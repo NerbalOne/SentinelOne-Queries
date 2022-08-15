@@ -1,5 +1,5 @@
-title: RDP Hijack Detected
-description:
+title: RDP Hijack
+description: Detects RDP Hijacks.
 author: NerbalOne
 date: 08/15/2022
 modified:

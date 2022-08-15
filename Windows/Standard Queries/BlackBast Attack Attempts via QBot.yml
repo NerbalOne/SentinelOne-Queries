@@ -1,0 +1,17 @@
+title: BlackBast Attack Attempts via QBot
+description: This rule will detect the Initial Phases of BlackBasta operations.
+author: SentinelOne
+date: 08/15/2022
+modified:
+mitre: 
+   tactic: 
+   technique: 
+   subtechnique: 
+operating_system: windows
+query: EndpointOS = "windows" AND SrcProcName = "explorer.exe" AND SrcProcParentName = "regsvr32.exe" AND IndicatorName In ( "SuspiciousChildRelation"        , "BloodHound"        , "PenetrationFramework" )
+false_positives:
+   - 
+tags:
+   - 
+references:
+   -

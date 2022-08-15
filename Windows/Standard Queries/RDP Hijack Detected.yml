@@ -1,0 +1,17 @@
+title: RDP Hijack Detected
+description:
+author: ion-storm
+date: 08/15/2022
+modified:
+mitre: 
+   tactic: Lateral Movement
+   technique: T1021
+   subtechnique: Remote Desktop Protocol
+operating_system: 
+query: ( SrcProcParentName Contains Anycase "tscon.exe" AND CmdLine Contains Anycase "/dest:rdp-tcp" )
+false_positives:
+   - 
+tags:
+   - 
+references:
+   -

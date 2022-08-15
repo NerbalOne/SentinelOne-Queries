@@ -8,9 +8,9 @@ Not all rules/queries will be mapped at to the MITRE ATTACK Framework.
 ## Abbreviations
 Below are some of the abbreviations I may use throughout this repository.
 
-S1 = SentinelOne
-DV = Deep Visibility
-PQ = Power Query
+S1 = SentinelOne\
+DV = Deep Visibility\
+PQ = Power Query\
 
 ## Side Note
 I'm still learning how to create rules and queries and not all of these have been tested.

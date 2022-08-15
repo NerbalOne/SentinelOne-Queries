@@ -1,0 +1,17 @@
+title: DNS Remote Code Execution
+description: Detects behavior related to CVE-2020-1350.
+author: NerbalOne
+date: 08/15/2022
+modified:
+mitre: 
+   tactic: Execution
+   technique: T1203
+   subtechnique: 
+operating_system: windows
+query: SrcProcParentName Contains Anycase "dns.exe"
+false_positives:
+   - 
+tags:
+   - 
+references:
+   -

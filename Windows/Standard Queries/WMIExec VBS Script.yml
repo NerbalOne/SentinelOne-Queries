@@ -1,0 +1,17 @@
+title: WMIExec VBS Script
+description: Detects suspicious file execution by wscript and cscript.
+author: https://tdm.socprime.com/tdm/info/NRzdC2mfrIv4/#s1-events
+date: 08/15/2022
+modified:
+mitre: 
+   tactic: 
+   technique: 
+   subtechnique: 
+operating_system: windows
+query: ( TgtProcCmdLine contains anycase ".vbs /shell " AND TgtProcImagePath endswith "\cscript.exe" )
+false_positives:
+   - 
+tags:
+   - 
+references:
+   -

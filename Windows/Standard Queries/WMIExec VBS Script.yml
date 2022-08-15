@@ -1,6 +1,6 @@
 title: WMIExec VBS Script
 description: Detects suspicious file execution by wscript and cscript.
-author: https://tdm.socprime.com/tdm/info/NRzdC2mfrIv4/#s1-events
+author: SOCPrime
 date: 08/15/2022
 modified:
 mitre: 
@@ -13,5 +13,5 @@ false_positives:
    - 
 tags:
    - 
-references:
+references: https://tdm.socprime.com/tdm/info/NRzdC2mfrIv4/#s1-events
    -

@@ -1,0 +1,23 @@
+title: PQ Login Failures
+description: This will show all failed logins.
+author: NerbalOne
+date: 08/17/2022
+modified:
+mitre: 
+   tactic: 
+   technique: 
+   subtechnique: 
+operating_system: windows
+query: 
+//This will show all failed logins
+event.category = 'logins'
+not (event.login.userName contains ("HealthMailbox"))
+| group NumberOfFailedAttempts = count(event.login.loginIsSuccessful=false)
+by event.login.userName, endpoint.name, src.endpoint.ip.address, event.login.accountDomain, event.login.type
+| sort -NumberOfFailedAttempts
+false_positives:
+   - 
+tags:
+   - 
+references:
+   -

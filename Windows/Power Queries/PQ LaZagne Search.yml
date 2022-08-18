@@ -1,0 +1,24 @@
+title: PQ LaZagne Search
+description: LaZagne Search, returns number of events matched by endpoint and process, and percentage of total events by each process/endpoint tuple.
+author: SentinelOne
+date: 08/18/2022
+modified:
+mitre: 
+   tactic: 
+   technique: 
+   subtechnique: 
+operating_system: windows
+query: 
+//LaZagne Search, returns number of events matched by endpoint and process, and percentage of total events by each process/endpoint tuple
+src.process.name matches "reg.exe"
+src.process.cmdline contains "save"
+src.process.cmdline contains "hklm"
+src.process.cmdline contains "sam"
+| columns endpoint.name, event.time, src.process.pid, src.process.parent.name, src.process.cmdline, src.process.parent.name
+| group NumberOfEvents = count(event.time), PercentOfAllEvents = percent_of_total(count(event.time)) by endpoint.name, src.process.parent.name, src.process.cmdline
+false_positives:
+   - 
+tags:
+   - 
+references:
+   -

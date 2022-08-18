@@ -1,0 +1,24 @@
+title: PQ External Login Successful
+description: This will show all successful external logins.
+author: NerbalOne
+date: 08/18/2022
+modified:
+mitre: 
+   tactic: 
+   technique: 
+   subtechnique: 
+operating_system: windows
+query:
+//This will show all successful external logins.
+event.category = 'logins'
+not (event.login.userName contains ("SYSTEM", "$", "HealthMailbox"))
+not (src.endpoint.ip.address contains ("10", "172.16", "172.17", "172.18", "172.19", "172.20", "172.21", "172.22", "172.23", "172.24", "172.25", "172.26", "172.27", "172.28", "172.29", "172.30", "172.31", "192.168", "::1", "127.0.0.1", "N//A"))
+| group NumberOfSuccessfulAttempts = count(event.login.loginIsSuccessful=true)
+by event.login.userName, endpoint.name, src.endpoint.ip.address, event.login.accountDomain, event.login.type
+| sort -NumberOfSuccessfulAttempts
+false_positives:
+   - 
+tags:
+   - 
+references:
+   -

@@ -1,0 +1,24 @@
+title: PQ Outbound PowerShell by Hostname
+description: Detects outbound communications, grouped by hostname and process that initiated communication. Change the end of line 16 to false to see logins from internal and external IPs 
+author: SentinelOne
+date: 08/18/2022
+modified:
+mitre: 
+   tactic: 
+   technique: 
+   subtechnique: 
+operating_system: windows
+query: 
+// Query for Outbound communications, grouped by hostname and process that initiated communication 
+src.process.name matches "powershell"
+dst.ip.address = *
+| let rfc1918 = not ($dst.ip.address matches "((127\\..*)|(192\\.168\..*)|(10\\..*)|(172\\.1[6-9]\\..*)|(172\\.2[0-9]\\..*)|(172\\.3[0-1]\\..*)).*")
+| filter rfc1918 = true
+| group hits = count(src.process.name), IPs = hacklist(dst.ip.address) by endpoint.name, src.process.name, src.process.storyline.id, site.name
+| sort -hits
+false_positives:
+   - 
+tags:
+   - 
+references:
+   -

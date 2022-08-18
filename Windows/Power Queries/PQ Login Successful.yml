@@ -15,7 +15,7 @@ not (event.login.userName contains ("$", "HealthMailbox"))
 | let rfc1918 = not ($src.endpoint.ip.address matches "((127\\..*)|(192\\.168\..*)|(10\\..*)|(172\\.1[6-9]\\..*)|(172\\.2[0-9]\\..*)|(172\\.3[0-1]\\..*)).*")
 | filter rfc1918 = true
 | group NumberOfSuccessfulAttempts = count(event.login.loginIsSuccessful=true)
-by event.login.userName, endpoint.name, src.endpoint.ip.address, event.login.accountDomain, event.login.type
+by event.login.userName, endpoint.name, src.endpoint.ip.address, event.login.accountDomain, event.login.type, site.name
 | sort -NumberOfSuccessfulAttempts
 false_positives:
    - Line 14 can be removed or edited if you don't want to exclude usernames containing "$" or "HealthMailbox".

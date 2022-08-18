@@ -1,5 +1,5 @@
 title: PQ Login Failures
-description: This will show all failed logins. Change end of line 16 to false to see internal and external logins.
+description: This will show all failed logins. Change the end of line 16 to false to see failed logins from internal and external IPs
 author: NerbalOne
 date: 08/17/2022
 modified:

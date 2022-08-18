@@ -8,7 +8,7 @@ mitre:
    technique: 
    subtechnique: 
 operating_system: windows
-query: EndpointOS = "windows" AND EventType = "File Creation" AND TgtFilePath In Contains Anycase  ( "\ProgramFiles\Windows Photo Viewer\ImagingDevices.exe"         , "\Program Files\Windows Mail\wab.exe"         , "\ProgramFiles\Windows Mail\wabmig.exe" ) AND SrcProcImagePath Contains Anycase "C:\Program Files\Common Files\Acronis\BackupAndRecovery\Common\service_process.exe"
+query: EndpointOS = "windows" AND EventType = "File Creation" AND TgtFilePath In Contains Anycase  ( "\ProgramFiles\Windows Photo Viewer\ImagingDevices.exe", "\Program Files\Windows Mail\wab.exe", "\ProgramFiles\Windows Mail\wabmig.exe" ) AND SrcProcImagePath Contains Anycase "C:\Program Files\Common Files\Acronis\BackupAndRecovery\Common\service_process.exe"
 false_positives:
    - 
 tags:

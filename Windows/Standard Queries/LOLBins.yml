@@ -1,0 +1,17 @@
+title: LOLBins
+description: LOLBins command processors masquerade under a different name and path.
+author: SentinelOne
+date: 08/18/2022
+modified:
+mitre: 
+   tactic: 
+   technique: 
+   subtechnique: 
+operating_system: windows
+query: ( SrcProcDisplayName = "Windows host process (Rundll32)" and not ( SrcProcImagePath endswith anycase "system32\rundll32.exe" or SrcProcImagePath endswith anycase "syswow64\rundll32.exe" ) ) or ( SrcProcDisplayName = "Microsoft(C) Register Server" and not ( SrcProcImagePath endswith anycase "system32\regsvr32.exe" or SrcProcImagePath endswith anycase "syswow64\regsvr32.exe" ) ) or ( SrcProcDisplayName = "Windows Command Processor" and not ( SrcProcImagePath endswith anycase "system32\cmd.exe" or SrcProcImagePath endswith anycase "syswow64\cmd.exe" ) ) or ( SrcProcDisplayName = "Windows PowerShell" and not SrcProcImagePath endswith anycase "powershell.exe" )
+false_positives:
+   - 
+tags:
+   - 
+references:
+   -

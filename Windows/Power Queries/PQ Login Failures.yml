@@ -1,5 +1,5 @@
 title: PQ Login Failures
-description: This will show all failed logins.
+description: This will show all failed logins. Change end of line 16 to false to see internal and external logins.
 author: NerbalOne
 date: 08/17/2022
 modified:
@@ -12,8 +12,10 @@ query:
 //This will show all failed logins
 event.category = 'logins'
 not (event.login.userName contains ("HealthMailbox"))
+| let rfc1918 = not ($src.endpoint.ip.address matches "((127\\..*)|(192\\.168\..*)|(10\\..*)|(172\\.1[6-9]\\..*)|(172\\.2[0-9]\\..*)|(172\\.3[0-1]\\..*)).*")
+| filter rfc1918 = true
 | group NumberOfFailedAttempts = count(event.login.loginIsSuccessful=false)
-by event.login.userName, endpoint.name, src.endpoint.ip.address, event.login.accountDomain, event.login.type
+by event.login.userName, endpoint.name, src.endpoint.ip.address, event.login.accountDomain, event.login.type, site.name
 | sort -NumberOfFailedAttempts
 false_positives:
    - 

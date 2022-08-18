@@ -1,0 +1,17 @@
+title: Possible DLL Hijack Attempt
+description: New unsigned DLL is dropped in the Windows directory (possible DLL hijack attempt).
+author: SentinelOne
+date: 08/18/2022
+modified:
+mitre: 
+   tactic: 
+   technique: 
+   subtechnique: 
+operating_system: windows
+query: ( objectType = "file" and TgtFileExtension contains anycase "dll" and TgtFilePath contains anycase "\windows" and ( ( SrcProcSignedStatus = "signed" AND SrcProcVerifiedStatus != "verified" ) or SrcProcSignedStatus != "signed" ) and ( TgtFilePath RegExp "\w\:\\windows\\[^\\]+$" OR TgtFilePath RegExp "windows\\sys(tem32|wow64)\\[^\\]+$" ) )
+false_positives:
+   - Legit software/programs that don't sign all their DLLs.
+tags:
+   - 
+references:
+   -

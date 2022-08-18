@@ -8,7 +8,7 @@ mitre:
    technique: 
    subtechnique: 
 operating_system: windows
-query: EndpointOS = "windows" AND SrcProcName = "explorer.exe" AND SrcProcParentName = "regsvr32.exe" AND IndicatorName In ( "SuspiciousChildRelation"        , "BloodHound"        , "PenetrationFramework" )
+query: EndpointOS = "windows" AND SrcProcName = "explorer.exe" AND SrcProcParentName = "regsvr32.exe" AND IndicatorName In ( "SuspiciousChildRelation", "BloodHound", "PenetrationFramework" )
 false_positives:
    - 
 tags:

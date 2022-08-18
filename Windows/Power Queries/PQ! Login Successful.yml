@@ -1,5 +1,5 @@
-title: PQ External Login Successful
-description: This will show all successful external logins.
+title: PQ Login Successful
+description: This will show all successful logins. Change end of line 16 to false to see internal and external logins.
 author: NerbalOne
 date: 08/18/2022
 modified:
@@ -18,7 +18,7 @@ not (event.login.userName contains ("$", "HealthMailbox"))
 by event.login.userName, endpoint.name, src.endpoint.ip.address, event.login.accountDomain, event.login.type
 | sort -NumberOfSuccessfulAttempts
 false_positives:
-   - 
+   - Line 14 can be removed or edited if you don't want to exclude usernames containing "$" or "HealthMailbox".
 tags:
    - 
 references:

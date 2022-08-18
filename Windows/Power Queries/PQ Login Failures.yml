@@ -18,7 +18,7 @@ not (event.login.userName contains ("HealthMailbox"))
 by event.login.userName, endpoint.name, src.endpoint.ip.address, event.login.accountDomain, event.login.type, site.name
 | sort -NumberOfFailedAttempts
 false_positives:
-   - 
+   - Line 14 can be removed or edited if you don't want to exclude usernames containing "HealthMailbox".
 tags:
    - 
 references:

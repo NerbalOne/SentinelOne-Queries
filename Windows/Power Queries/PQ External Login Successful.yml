@@ -9,10 +9,10 @@ mitre:
    subtechnique: 
 operating_system: windows
 query:
-//This will show all successful external logins.
+//This will show all successful external logins
 event.category = 'logins'
 not (event.login.userName contains ("SYSTEM", "$", "HealthMailbox"))
-not (src.endpoint.ip.address contains ("10", "172.16", "172.17", "172.18", "172.19", "172.20", "172.21", "172.22", "172.23", "172.24", "172.25", "172.26", "172.27", "172.28", "172.29", "172.30", "172.31", "192.168", "::1", "127.0.0.1", "N//A"))
+not (src.endpoint.ip.address matches "((127\\..*)|(192\\.168\..*)|(10\\..*)|(172\\.1[6-9]\\..*)|(172\\.2[0-9]\\..*)|(172\\.3[0-1]\\..*)).*")
 | group NumberOfSuccessfulAttempts = count(event.login.loginIsSuccessful=true)
 by event.login.userName, endpoint.name, src.endpoint.ip.address, event.login.accountDomain, event.login.type
 | sort -NumberOfSuccessfulAttempts

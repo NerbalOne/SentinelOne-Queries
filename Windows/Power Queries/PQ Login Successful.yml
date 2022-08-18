@@ -1,0 +1,23 @@
+title: PQ Login Successful
+description: This will show all successful logins.
+author: NerbalOne
+date: 08/18/2022
+modified:
+mitre: 
+   tactic: 
+   technique: 
+   subtechnique: 
+operating_system: windows
+query: 
+//This will show all successful logins
+event.category = 'logins'
+not (event.login.userName contains ("SYSTEM", "$", "HealthMailbox"))
+| group NumberOfSuccessfulAttempts = count(event.login.loginIsSuccessful=true)
+by event.login.userName, endpoint.name, src.endpoint.ip.address, event.login.accountDomain, event.login.type
+| sort -NumberOfSuccessfulAttempts
+false_positives:
+   - 
+tags:
+   - 
+references:
+   -

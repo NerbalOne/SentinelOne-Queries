@@ -2,7 +2,7 @@
 This will be a repository of SentinelOne Deep Visibility queries both the standard queries and the Power Queries.
 
 ## Info
-This repository will mainly contain YAML files with it divided by Operating System and the type of queries. This repository and rules/queries were inspiured by [Sentinelone-Queries](https://github.com/keyboardcrunch/sentinelone-queries) and [Sysmon-Config](https://github.com/ion-storm/sysmon-config/blob/master/sysmonconfig-export.xml).
+This repository will mainly contain YAML files with it divided by Operating System and the type of queries. This repository and rules/queries were inspiured by [SentinelOne-Queries](https://github.com/keyboardcrunch/sentinelone-queries) and [Sysmon-Config](https://github.com/ion-storm/sysmon-config/blob/master/sysmonconfig-export.xml).
 Not all rules/queries will be mapped to the MITRE ATTACK Framework. 
 
 ## Abbreviations
@@ -14,5 +14,5 @@ PQ = Power Query
 
 ## Side Note
 I'm still learning how to create rules and queries and not all of these have been tested.\
-As of writing this, most of the rules/queries should have a low false positive rate. (At least in my environment.)\
+I don't use all of these for STAR rules. Some are just for threat hunting or finding certain events quicker.\
 This is still a work in progess and will be updated off and on.

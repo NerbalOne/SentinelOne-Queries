@@ -1,5 +1,5 @@
 title: PQ Login Successful
-description: This will show all successful logins. Change end of line 16 to false to see internal and external logins.
+description: This will show all successful logins. Change the end of line 16 to false to see logins from internal and external IPs
 author: NerbalOne
 date: 08/18/2022
 modified:

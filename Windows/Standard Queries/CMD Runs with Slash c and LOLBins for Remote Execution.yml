@@ -1,0 +1,17 @@
+title: CMD Runs with Slash c and LOLBins for Remote Execution
+description: 
+author: SentinelOne
+date: 08/18/2022
+modified:
+mitre: 
+   tactic: 
+   technique: 
+   subtechnique: 
+operating_system: windows
+query: ( SrcProcCmdLine contains anycase "cmd" and SrcProcCmdLine contains anycase "/c" and SrcProcCmdLine RegExp "(at|sc|schtasks|wmic)(\s|\"|\.exe).*cmd.*\s/c\s" )
+false_positives:
+   - 
+tags:
+   - 
+references:
+   -

@@ -5,8 +5,28 @@ This will be a repository of SentinelOne Deep Visibility queries both the standa
 This repository will mainly contain YAML files with it divided by Operating System and the type of queries. This repository and rules/queries were inspiured by [SentinelOne-Queries](https://github.com/keyboardcrunch/sentinelone-queries), [Sysmon-Config](https://github.com/ion-storm/sysmon-config/blob/master/sysmonconfig-export.xml), and [S1QL-Queries](https://github.com/SentineLabs/S1QL-Queries).
 Not all rules/queries will be mapped to the MITRE ATTACK Framework. 
 
+##YAML Files
+
 ## Abbreviations
 Below are some of the abbreviations I may use throughout this repository.
+```
+title:                  -required
+description:            -required
+author:                 -required
+date:                   -required
+modified:               -required
+   tactic:              -optional
+   technique:           -optional
+   subtechnique:        -optional
+operating_system:       -required
+query:                  -required
+false_positives:        -optional
+   - 
+tags:                   -optional
+   - 
+references:             -optional
+   -
+```
 
 S1 = SentinelOne\
 DV = Deep Visibility\

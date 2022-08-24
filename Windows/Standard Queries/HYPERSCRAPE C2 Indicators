@@ -4,8 +4,8 @@ author: NerbalOne
 date: 08/24/2022
 modified:
 mitre: 
-   tactic: 
-   technique: 
+   tactic: Email Collection
+   technique: T1114
    subtechnique: 
 operating_system: windows
 query: EndpointOS = "windows" and DstIP In ( "136.243.108.14"  , "173.209.51.54" )

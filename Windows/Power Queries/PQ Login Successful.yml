@@ -3,10 +3,10 @@ description: This will show all successful logins. Change the end of line 16 to 
 author: NerbalOne
 date: 08/18/2022
 modified:
-mitre: 
-   tactic: 
-   technique: 
-   subtechnique: 
+mitreID: 
+   technique:
+   tactic:     
+   subtechnique:
 operating_system: windows
 query:
 //This will show all successful external logins
@@ -23,3 +23,4 @@ tags:
    - 
 references:
    -
+status: stable

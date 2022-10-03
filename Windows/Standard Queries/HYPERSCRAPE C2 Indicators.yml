@@ -1,12 +1,12 @@
 title: HYPERSCRAPE C2 Indicators
-description: This will detect the C2s used in HYPERSCRAPE. | https://blog.google/threat-analysis-group/new-iranian-apt-data-extraction-tool/
+description: This will detect the C2s used in HYPERSCRAPE.
 author: NerbalOne
 date: 08/24/2022
 modified:
-mitre: T1114
-   tactic: Collection
+mitreID: T1114
    technique: Email Collection
-   subtechnique: 
+   tactic: Collection 
+   subtechnique:
 operating_system: windows
 query: EndpointOS = "windows" and DstIP In ( "136.243.108.14"  , "173.209.51.54" )
 false_positives:
@@ -14,4 +14,5 @@ false_positives:
 tags:
    - 
 references:
-   -
+   - https://blog.google/threat-analysis-group/new-iranian-apt-data-extraction-tool/
+status: experimental

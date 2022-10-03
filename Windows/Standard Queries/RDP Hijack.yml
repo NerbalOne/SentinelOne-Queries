@@ -3,9 +3,9 @@ description: Detects RDP Hijacks.
 author: NerbalOne
 date: 08/15/2022
 modified:
-mitre: T1021
-   tactic: Lateral Movement
+mitreID: T1021
    technique: Remote Services
+   tactic: Lateral Movement
    subtechnique: Remote Desktop Protocol
 operating_system: windows
 query: ( SrcProcParentName Contains Anycase "tscon.exe" AND CmdLine Contains Anycase "/dest:rdp-tcp" )
@@ -15,3 +15,4 @@ tags:
    - 
 references:
    -
+status: stable

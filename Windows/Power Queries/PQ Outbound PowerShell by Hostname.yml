@@ -3,9 +3,9 @@ description: Detects outbound communications, grouped by hostname and process th
 author: SentinelOne
 date: 08/18/2022
 modified:
-mitre: 
-   tactic: 
-   technique: 
+mitreID: 
+   technique:
+   tactic:     
    subtechnique: 
 operating_system: windows
 query: 
@@ -22,3 +22,4 @@ tags:
    - 
 references:
    -
+status: stable

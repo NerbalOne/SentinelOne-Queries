@@ -4,9 +4,9 @@ author: SentinelOne
 date: 08/18/2022
 modified:
 mitre: 
-   tactic: 
-   technique: 
-   subtechnique: 
+   technique:
+   tactic:     
+   subtechnique:
 operating_system: windows
 query: 
 //LaZagne Search, returns number of events matched by endpoint and process, and percentage of total events by each process/endpoint tuple
@@ -22,3 +22,4 @@ tags:
    - 
 references:
    -
+status: stable

@@ -12,8 +12,8 @@ description:            -required
 author:                 -required
 date:                   -required
 modified:               -required
-   tactic:              -optional
    technique:           -optional
+   tactic:              -optional      
    subtechnique:        -optional
 operating_system:       -required
 query:                  -required

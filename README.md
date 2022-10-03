@@ -25,8 +25,7 @@ references:             -optional
    -
 status:                 -required
 ```
-Right now the status will either be experimental or stable. Experimental means rule is untested and stable means tested and/or verifed by someone.
-
+Right now the status value will either be experimental or stable. Experimental means rule is untested and stable means tested and/or verifed by someone.
 
 ## Abbreviations
 Below are some of the abbreviations I may use throughout this repository.

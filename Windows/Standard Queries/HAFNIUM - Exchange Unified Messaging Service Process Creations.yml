@@ -1,13 +1,12 @@
 title: HAFNIUM - Exchange Unified Messaging Service Process Creations
 description: This detects Exchange Unified Messaging Service process creations used in HAFNIUM.
-
 author: NerbalOne
 date: 10/03/2022
 modified:
-mitre: T1190
-   tactic: Initial Access
+mitreID: T1190
    technique: Exploit Public-Facing Application
-   subtechnique: 
+   tactic: Initial Access
+   subtechnique:
 operating_system: Windows
 query: SrcProcImagePath In AnyCase ("UMWorkerProcess.exe" , "UMService.exe")
 false_positives:
@@ -16,3 +15,4 @@ tags:
    - 
 references:
    - https://www.splunk.com/en_us/blog/security/detecting-microsoft-exchange-vulnerabilities-0-8-days-later.html
+status: experimental

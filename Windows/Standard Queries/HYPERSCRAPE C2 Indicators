@@ -3,9 +3,9 @@ description: This will detect the C2s used in HYPERSCRAPE. | https://blog.google
 author: NerbalOne
 date: 08/24/2022
 modified:
-mitre: 
-   tactic: Email Collection
-   technique: T1114
+mitre: T1114
+   tactic: Collection
+   technique: Email Collection
    subtechnique: 
 operating_system: windows
 query: EndpointOS = "windows" and DstIP In ( "136.243.108.14"  , "173.209.51.54" )

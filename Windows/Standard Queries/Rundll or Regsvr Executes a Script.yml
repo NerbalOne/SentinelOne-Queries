@@ -3,10 +3,10 @@ description: Detects Rundll or Regsvr executing a script.
 author: SentinelOne
 date: 08/18/2022
 modified:
-mitre: 
-   tactic: 
-   technique: 
-   subtechnique: 
+mitreID: 
+   technique:
+   tactic:     
+   subtechnique:
 operating_system: windows
 query: ( SrcProcDisplayName = "Windows host process (Rundll32)" or SrcProcDisplayName = "Microsoft(C) Register Server" ) AND SrcProcCmdLine RegExp ".*(javascript|mshtml|runhtmlapplication).*"
 false_positives:
@@ -15,3 +15,4 @@ tags:
    - 
 references:
    -
+status: stable

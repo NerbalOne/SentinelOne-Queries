@@ -3,7 +3,7 @@ description: LaZagne Search, returns number of events matched by endpoint and pr
 author: SentinelOne
 date: 08/18/2022
 modified:
-mitre: 
+mitreID: 
    technique:
    tactic:     
    subtechnique:

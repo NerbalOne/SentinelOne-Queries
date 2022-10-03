@@ -3,10 +3,10 @@ description: Detects Bat or CMD Files Dropped in Temp Folder.
 author: SentinelOne
 date: 08/18/2022
 modified:
-mitre: 
-   tactic: 
-   technique: 
-   subtechnique: 
+mitreID: 
+   technique:
+   tactic:     
+   subtechnique:
 operating_system: windows
 query: objectType = "file" and TgtFilePath Contains Anycase "\windows\temp" and ( TgtFilePath endswith anycase "bat" or TgtFilePath endswith anycase ".cmd" ) and TgtFilePath RegExp "windows\\temp\\[^\\\{\}]+$"
 false_positives:
@@ -15,3 +15,4 @@ tags:
    - 
 references:
    -
+status: stable

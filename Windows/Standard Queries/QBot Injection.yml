@@ -1,0 +1,18 @@
+title: QBot Injection
+description: This will detect QBot behavior.
+author: NerbalOne
+date: 10/10/2022
+modified:
+mitreID: T1055
+   technique: Process Injection
+   tactic: Privilege Escalation     
+   subtechnique: Dynamic-link Library Injection
+operating_system: windows
+query: SrcProcParentImagePath In Contains Anycase  ("\rundll32.exe" , "\regsvr32.exe") AND TgtProcImagePath In Contains Anycase ("\explorer.exe" , "\wermgr.exe" , "\msra.exe" , "\OneDriveSetup.exe" , "\mobsync.exe" , "\xwizard.exe") AND CmdLine EndsWith ".exe"
+false_positives:
+   - 
+tags:
+   - 
+references:
+   -
+status: valid

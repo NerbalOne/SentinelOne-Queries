@@ -1,0 +1,18 @@
+title: Nitrokod IOCs
+description: This will detect DNS Requests and File Creation used by Nitrokod.
+author: dannyroemhild
+date: 10/13/2022
+modified:
+mitreID:
+   technique:
+   tactic:     
+   subtechnique:
+operating_system: windows
+query: DnsRequest In Contains Anycase ("nitrokod.com","intelserviceupdate.com","nvidiacenter.com") OR TgtFilePath Contains Anycase "nitrokod"
+false_positives:
+   - 
+tags:
+   - 
+references:
+   - https://github.com/dannyroemhild/sentinelone-star-queries/blob/main/Detect_Nitrokod.md
+status: experimental

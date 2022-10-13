@@ -1,0 +1,18 @@
+title: Living Off Windows Defender or VMware - LockBit
+description: This will detect PowerShell initiating MPCMDRun.exe and/or VMwareXferlogs.exe seen in use by LockBit Ransomware.
+author: dannyroemhild
+date: 10/13/2022
+modified:
+mitreID: T1059
+   technique: Command and Scripting Interpreter
+   tactic: Execution  
+   subtechnique: T1059.001
+operating_system: windows
+query: EndpointOS = "windows" AND EventType = "Process Creation" AND TgtProcName Contains Anycase "powershell.exe" AND (TgtProcCmdLine Contains Anycase "MpCmdRun.exe" OR TgtProcCmdLine Contains Anycase "mpclient.dll" OR TgtProcCmdLine Contains Anycase "VMwareXferlogs.exe") AND TgtProcCmdLine Contains Anycase "Invoke-WebRequest"
+false_positives:
+   - 
+tags:
+   - 
+references:
+   - https://github.com/dannyroemhild/sentinelone-star-queries/blob/main/Downloads.md
+status: experimental

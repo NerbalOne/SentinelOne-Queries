@@ -1,0 +1,18 @@
+title: Unusual SolarWinds Child Process
+description: This rule was converted from the FireEye hxioc rule. This rule identifies unusual solarwinds child processes.
+author: SOCPrime
+date: 11/14/2022
+modified:
+mitreID: T1195
+   technique: Supply Chain Compromise
+   tactic: Initial Access    
+   subtechnique: T1195.002
+operating_system: windows
+query: (SrcProcImagePath endswith "\solarwinds.businesslayerhost.exe" AND NOT TgtProcImagePath in contains anycase ("\SolarWinds\Orion\APM\APMServiceControl.exe", "\SolarWinds\Orion\ExportToPDFCmd.Exe", "\SolarWinds.Credentials\SolarWinds.Credentials.Orion.WebApi.exe", "\SolarWinds\Orion\Topology\SolarWinds.Orion.Topology.Calculator.exe", "\SolarWinds\Orion\Database-Maint.exe", "\SolarWinds.Orion.ApiPoller.Service\SolarWinds.Orion.ApiPoller.Service.exe", "\Windows\SysWOW64\WerFault.exe"))
+false_positives:
+   - 
+tags:
+   - 
+references:
+   - https://tdm.socprime.com/tdm/info/umzMouc3Fp23/#s1-events
+status: stable

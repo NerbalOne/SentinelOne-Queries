@@ -13,6 +13,6 @@ false_positives:
    - 
 tags:
    - 
-references: https://tdm.socprime.com/tdm/info/NRzdC2mfrIv4/#s1-events
-   -
+references: 
+   - https://tdm.socprime.com/tdm/info/NRzdC2mfrIv4/#s1-events
 status: stable

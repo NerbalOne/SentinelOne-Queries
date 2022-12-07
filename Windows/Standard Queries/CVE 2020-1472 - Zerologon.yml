@@ -12,7 +12,8 @@ query: IndicatorName = "ZerologonExploitationAttempt"
 false_positives:
    - 
 tags:
-   - 
+   - CVE 2020-1472
+   - Zerologon
 references:
    - https://www.sentinelone.com/blog/zerologon-cve-2020-1472-sentinelone-first-to-detect-on-the-endpoint/
 status: stable

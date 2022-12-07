@@ -1,0 +1,19 @@
+title: SquirrelWaffle IOCs
+description: This rule hunts for known file names of the SquirrelWaffle loader.
+author: SentinelOne
+date: 12/07/2022
+modified:
+mitreID:
+   technique:
+   tactic:     
+   subtechnique:
+operating_system: windows
+query: EndpointOS = "windows" AND EventType = "Process Creation" AND TgtProcDisplayName = "Microsoft(C) Register Server" AND TgtProcCmdLine in Contains Anycase ("test.test","test1.test","test2.test","good.good","good1.good","good2.good","ww1.dll","ww2.dll","ww3.dll","ww4.dll","ww5.dll","besta.ocx","bestb.ocx","bestc.ocx","volet1.ocx","volet2.ocx","volet3.ocx","tot1.ocx","tot2.ocx","tot3.ocx","rex1.ocx","rex2.ocx","rex3.ocx")
+false_positives:
+   - 
+tags:
+   - SquirrelWaffle
+   - Qakbot
+references:
+   - https://www.sentinelone.com/blog/is-squirrelwaffle-the-new-emotet-how-to-detect-the-latest-malspam-loader/
+status: stable

@@ -12,7 +12,7 @@ query: EndpointOS = "windows" AND EventType = "Process Creation" AND TgtProcName
 false_positives:
    - 
 tags:
-   - 
+   - LockBit
 references:
    - https://github.com/dannyroemhild/sentinelone-star-queries/blob/main/Downloads.md
 status: experimental

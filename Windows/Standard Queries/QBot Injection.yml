@@ -12,7 +12,8 @@ query: SrcProcParentImagePath In Contains Anycase  ("\rundll32.exe" , "\regsvr32
 false_positives:
    - Adobe InDesign
 tags:
-   - 
+   - QBot
+   - Qakbot
 references:
    -
 status: stable

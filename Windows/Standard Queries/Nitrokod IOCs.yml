@@ -12,7 +12,7 @@ query: DnsRequest In Contains Anycase ("nitrokod.com","intelserviceupdate.com","
 false_positives:
    - 
 tags:
-   - 
+   - Nitrokod
 references:
    - https://github.com/dannyroemhild/sentinelone-star-queries/blob/main/Detect_Nitrokod.md
 status: experimental

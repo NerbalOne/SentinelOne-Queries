@@ -1,0 +1,18 @@
+title: CVE 2020-1472 - Zerologon
+description: This uses one of S1's indiciator names to detect Zerologon.
+author: SentinelOne
+date: 12/07/2022
+modified:
+mitreID: 
+   technique:
+   tactic:     
+   subtechnique:
+operating_system: windows
+query: IndicatorName = "ZerologonExploitationAttempt"
+false_positives:
+   - 
+tags:
+   - 
+references:
+   - https://www.sentinelone.com/blog/zerologon-cve-2020-1472-sentinelone-first-to-detect-on-the-endpoint/
+status: stable

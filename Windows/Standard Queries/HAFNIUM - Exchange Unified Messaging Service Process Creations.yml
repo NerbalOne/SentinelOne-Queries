@@ -12,7 +12,7 @@ query: SrcProcImagePath In AnyCase ("UMWorkerProcess.exe" , "UMService.exe")
 false_positives:
    - 
 tags:
-   - 
+   - HAFNIUM
 references:
    - https://www.splunk.com/en_us/blog/security/detecting-microsoft-exchange-vulnerabilities-0-8-days-later.html
 status: experimental

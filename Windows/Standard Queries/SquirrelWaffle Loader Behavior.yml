@@ -1,0 +1,19 @@
+title: SquirrelWaffle Loader Behavior
+description: This query hunts for the dropper activity.
+author: SentinelOne
+date: 12/07/2022
+modified:
+mitreID:
+   technique:
+   tactic:     
+   subtechnique:
+operating_system: windows
+query: EndpointOS = "windows" AND EventType = "Process Creation" AND SrcProcName In Anycase ("excel.exe", "winword.exe") AND TgtProcDisplayName In ("Microsoft(C) Register Server","Windows host process (Rundll32)") AND TgtProcCmdLine Contains Anycase ".ocx" AND NOT TgtProcCmdLine Contains Anycase "Windows\system32\msscript.ocx"
+false_positives:
+   - 
+tags:
+   - SquirrelWaffle
+   - Qakbot
+references:
+   - https://www.sentinelone.com/blog/is-squirrelwaffle-the-new-emotet-how-to-detect-the-latest-malspam-loader/
+status: stable

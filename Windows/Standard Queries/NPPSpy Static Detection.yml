@@ -1,0 +1,18 @@
+title: NPPSpy Static Detection
+description: This query just looks for the hash and common names of files used by NPPSpy.
+author: NerbalOne
+date: 01/10/2023
+modified:
+mitreID: T1003.001
+   technique: OS Credential Dumping
+   tactic: Credential Access     
+   subtechnique: LSASS Memory
+operating_system: windows
+query: FilePath In Contains Anycase ("lsass.dll" , "NPPSpy.txt" , "NPPSpy.dll") OR Sha1 = "5bb8cbadba7886a850291137905fcbab7838fc39"
+false_positives:
+   - 
+tags:
+   - NPPSpy
+references:
+   -
+status: stable

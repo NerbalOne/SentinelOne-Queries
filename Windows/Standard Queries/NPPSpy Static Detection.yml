@@ -8,7 +8,7 @@ mitreID: T1003.001
    tactic: Credential Access     
    subtechnique: LSASS Memory
 operating_system: windows
-query: FilePath In Contains Anycase ("lsass.dll" , "NPPSpy.txt" , "NPPSpy.dll") OR Sha1 = "5bb8cbadba7886a850291137905fcbab7838fc39"
+query: FilePath In Contains Anycase ("lsass.dll" , "NPPSpy.txt" , "NPPSpy.dll") OR RegistryValue Contains Anycase "NPPSpy" OR Sha1 = "5bb8cbadba7886a850291137905fcbab7838fc39"
 false_positives:
    - 
 tags:

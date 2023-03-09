@@ -1,0 +1,18 @@
+title: SocGholish Behavior
+description: This will detect standard SocGholish behavior.
+author: SentinelOne
+date: 03/09/2023
+modified:
+mitreID: T1059
+   technique: Command and Scripting Interpreter
+   tactic: Execution     
+   subtechnique:
+operating_system: windows
+query: EndpointOS = "windows" AND EventType = "Process Creation" AND SrcProcName = "wscript.exe" AND TgtProcName = "cmd.exe" AND TgtProcCmdLine In Contains Anycase ("whoami /all >>", "cmdkey /list >>")
+false_positives:
+   - 
+tags:
+   - SocGholish
+references:
+   - https://www.sentinelone.com/labs/socgholish-diversifies-and-expands-its-malware-staging-infrastructure-to-counter-defenders/
+status: stable

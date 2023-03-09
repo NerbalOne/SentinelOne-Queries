@@ -1,0 +1,18 @@
+title: SocGholish Process Commandline
+description: This will detect SocGholish behavior at the commandline.
+author: SentinelOne
+date: 03/09/2023
+modified:
+mitreID: T1059
+   technique: Command and Scripting Interpreter
+   tactic: Execution     
+   subtechnique:
+operating_system: windows
+query: EndpointOS = "windows" AND EventType = "Process Creation" AND TgtProcName = "wscript.exe" AND TgtProcCmdLine RegExp "(Chrome|Firefox|Opera|Edge)\.Update\.[a-z0-9]{6}\.js"
+false_positives:
+   - 
+tags:
+   - SocGholish
+references:
+   - https://www.sentinelone.com/labs/socgholish-diversifies-and-expands-its-malware-staging-infrastructure-to-counter-defenders/
+status: stable

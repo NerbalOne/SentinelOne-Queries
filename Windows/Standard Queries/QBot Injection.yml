@@ -11,6 +11,7 @@ operating_system: windows
 query: SrcProcParentImagePath In Contains Anycase  ("\rundll32.exe" , "\regsvr32.exe") AND TgtProcImagePath In Contains Anycase  ("\explorer.exe" , "\wermgr.exe" , "\msra.exe" , "\OneDriveSetup.exe" , "\mobsync.exe" , "\xwizard.exe") AND CmdLine EndsWith ".exe" AND TgtProcRelation = "child"
 false_positives:
    - Adobe InDesign
+   - Adobe Creative Cloud
 tags:
    - QBot
    - Qakbot

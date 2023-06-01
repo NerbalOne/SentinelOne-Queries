@@ -8,7 +8,7 @@ mitreID:
    tactic:     
    subtechnique:
 operating_system: windows
-query: TgtFilePath RegExp "\\MOVEit Transfer\\wwwroot\\[^\\]{1,40}\.(zip|rar|7z|exe|ps1|bat)"
+query: EndpointOS = "windows" AND TgtFilePath RegExp "\\MOVEit Transfer\\wwwroot\\[^\\]{1,40}\.(zip|rar|7z|exe|ps1|bat)"
 false_positives:
    - 
 tags:

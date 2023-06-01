@@ -1,0 +1,20 @@
+title: MOVEit Transfer 0-Day
+description: Detects the creation of files with unexcpected extensions in the root folder of the MOVEit Transfer service. First reports mentioned uncommon file types in the wwwroot folder as signs of a compromised. Attackers used that folder as a staging directory for the exfiltration. -Florian Roth
+author: NerbalOne
+date: 06/01/2023
+modified:
+mitreID:
+   technique:
+   tactic:     
+   subtechnique:
+operating_system: windows
+query: TgtFilePath RegExp "\\MOVEit Transfer\\wwwroot\\[^\\]{1,40}\.(zip|rar|7z|exe|ps1|bat)"
+false_positives:
+   - 
+tags:
+   - 
+references:
+   - https://twitter.com/cyb3rops/status/1664306595432394752
+   - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+   - https://www.bleepingcomputer.com/news/security/new-moveit-transfer-zero-day-mass-exploited-in-data-theft-attacks/
+status: experimental

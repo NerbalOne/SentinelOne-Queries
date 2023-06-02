@@ -3,10 +3,10 @@ description: Detects the creation of files with unexcpected extensions in the ro
 author: NerbalOne
 date: 06/01/2023
 modified:
-mitreID:
-   technique:
-   tactic:     
-   subtechnique:
+mitreID: T1190
+   technique: Exploit Public-Facing Application
+   tactic: Initial Access  
+   subtechnique: 
 operating_system: windows
 query: EndpointOS = "windows" AND TgtFilePath RegExp "\\MOVEit Transfer\\wwwroot\\[^\\]{1,40}\.(zip|rar|7z|exe|ps1|bat)"
 false_positives:

@@ -1,0 +1,20 @@
+title: Gootloader - Initial Execution 
+description: This will detect the initial stage of Gootloader.
+author: NerbalOne
+date: 11/30/2023
+modified:
+mitreID:
+   technique:
+   tactic:     
+   subtechnique:
+operating_system: windows
+query: EndpointOS = "windows" AND SrcProcParentImagePath Contains Anycase "wscript.exe" AND SrcProcImagePath Contains Anycase "cscript.exe" AND TgtProcImagePath Contains Anycase "powershell.exe" AND TgtProcRelation = "child"
+false_positives:
+   - 
+tags:
+   - Gootloader
+   - Gootkit
+references:
+   - https://redcanary.com/blog/gootloader/
+   - https://www.mandiant.com/resources/blog/tracking-evolution-gootloader-operations
+status: experimental

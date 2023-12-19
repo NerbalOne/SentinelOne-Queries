@@ -1,0 +1,18 @@
+title: Manjusaka Framework
+description: This detects indicators of Manjusaka Framework behavior and any attempts to steal WiFi credentials.
+author: SentinelOne
+date: 12/19/2023
+modified:
+mitreID:
+   technique:
+   tactic:     
+   subtechnique:
+operating_system: windows
+query: EndpointOS = "windows" AND EventType = "Process Creation" AND TgtProcCmdLine Contains Anycase "netsh wlan show profile" AND TgtProcCmdLine Contains Anycase "key=clear"
+false_positives:
+   - 
+tags:
+   - Manjusaka
+references:
+   - https://blog.talosintelligence.com/manjusaka-offensive-framework/
+status: stable

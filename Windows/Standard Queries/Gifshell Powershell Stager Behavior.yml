@@ -1,0 +1,18 @@
+title: Gifshell Powershell Stager Behavior
+description: This detects indicators of the Powershell Stager behavior.
+author: SentinelOne
+date: 12/20/2023
+modified:
+mitreID: 
+   technique:
+   tactic:     
+   subtechnique:
+operating_system: windows
+query: SrcProcCmdScript Contains Anycase "https_teams.microsoft.com_0.indexeddb.leveldb" or SrcProcCmdScript Contains Anycase "Microsoft\Teams\Local Storage\leveldb" or SrcProcCmdScript Contains Anycase "Microsoft\Teams\Cookies"
+false_positives:
+   - 
+tags:
+   - Gifshell
+references:
+   - https://www.sentinelone.com/blog/the-good-the-bad-and-the-ugly-in-cybersecurity-week-38-4/
+status: stable

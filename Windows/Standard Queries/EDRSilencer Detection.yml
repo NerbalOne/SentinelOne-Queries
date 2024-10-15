@@ -1,0 +1,19 @@
+title: EDRSilencer Detection
+description: Basic query to trigger on certain process names or commands related to EDRSilencer.
+author: NerbalOne
+date: 10/15/2024
+modified:
+mitreID: T1562.001
+   technique: Impair Defenses
+   tactic: Defense Evasion     
+   subtechnique: Disable or Modify Tools
+operating_system: windows
+query: SrcProcName In Contains Anycase ("cmd.exe" , "powershell.exe") AND (TgtProcName Contains Anycase "edrsilencer.exe" OR CmdLine Contains Anycase "blockedr")
+false_positives:
+   - 
+tags:
+   - EDRSilencer
+references:
+   - https://www.bleepingcomputer.com/news/security/edrsilencer-red-team-tool-used-in-attacks-to-bypass-security/
+   - https://github.com/netero1010/EDRSilencer
+status: stable

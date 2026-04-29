@@ -2,11 +2,11 @@ title: PsExec Execution Detected
   description: Detects any execution involving psexec.exe or psexesvc.exe as either the source or target process.
   author: NerbalOne
   date: 2026-04-29
-  modified:
-  mitreID:
-    technique: T1569.002
-    tactic: execution, lateral-movement
-    subtechnique: System Services - Service Execution
+  modified: 2026-04-29
+  mitreID: T1569.002
+    technique: System Services: Service Execution
+    tactic: Execution
+    subtechnique: 
   operating_system: windows
   query: event.type = "Process Creation" AND ( tgt.process.name in:anycase ("psexec.exe", "psexesvc.exe") OR
   src.process.name in:anycase ("psexec.exe", "psexesvc.exe") )
